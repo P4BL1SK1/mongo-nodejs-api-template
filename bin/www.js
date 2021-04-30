@@ -2,14 +2,17 @@ import http from 'http';
 import app from '../lib/app';
 import mongoose from 'mongoose';
 
-const port = process.env.PORT || '3001';
+const isDev = true;
+const port = process.env.PORT || '4000';
+const uri = isDev ? process.env.MONGODB_URI : process.env.MONGODB_REMOTE_URI;
 
 app.set('port', port);
 
 const server = http.createServer(app);
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true }).then((db) => {
     app.listen(port, () => {
+        console.log(`Database connection: OK`);
         console.log(`Application running at ===> http://localhost:${port}`);
     });
 }).catch(err => {

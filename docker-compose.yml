@@ -1,17 +1,16 @@
-mongodb:
-    image: mongo:latest
+version: "3"
+
+services:
+  mongo:
+    container_name: mongo_database
     restart: always
-    ports:
-      - "27017:27017"
     volumes:
       - ./docker/mongodb:/data/db
-    env_file:
-      - .env
+    image: mongo
+    ports:
+      - "27017:27017"
     environment:
-      ALLOW_IP_RANGE: 0.0.0.0/0
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
       MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
-    command: ["-f", "/etc/mongod.conf"]
-
-      
+    
