@@ -2,9 +2,8 @@ import http from 'http';
 import app from '../lib/app';
 import mongoose from 'mongoose';
 
-const isDev = true;
 const port = process.env.PORT || '4000';
-const uri = isDev ? process.env.MONGODB_URI : process.env.MONGODB_REMOTE_URI;
+const uri = process.env.MONGODB_REMOTE_URI || process.env.MONGODB_URI;
 
 app.set('port', port);
 
