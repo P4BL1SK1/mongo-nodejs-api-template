@@ -22,7 +22,8 @@ The principal technologies that brings life to this app are:
 Assuming that you're gonna work with `Docker`, the first thing that you have to do is run the Docker container with the next command:
 
 ```bash
-# This command starts the container in detached mode which means that runs the container in background. And it is persistent even if the pc is restarted or shutted down.
+# This command starts the container in detached mode which means that runs the container in background.
+# And it is persistent even if the pc is restarted or shutted down.
 docker-compose up -d # OR docker-compose up --detach
 
 # Also you can run the script in the root  directory to stop the container delete the data and rerun.
@@ -35,7 +36,7 @@ cp .env.example .env
 
 ## Setup without docker
 
-If you want to work without Docker you can do it. All you have to do is put your Mongo cluster uri in the env variable `MONGODB_REMOTE_URI`:
+If you want to work without Docker you can do it. All you have to do is put your Mongo cluster uri in the env variable `MONGODB_REMOTE_URI` like this:
 
 ```env
 MONGODB_REMOTE_URI=mongodb+srv://<user>:<password>@<cluster>.h0lr2.mongodb.net/
