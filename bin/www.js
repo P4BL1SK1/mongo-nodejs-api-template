@@ -10,7 +10,7 @@ app.set('port', port);
 
 const server = http.createServer(app);
 
-mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true }).then((db) => {
+mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }).then((db) => {
     app.listen(port, () => {
         console.log(`Database connection: OK`);
         console.log(`Application running at ===> http://localhost:${port}`);
