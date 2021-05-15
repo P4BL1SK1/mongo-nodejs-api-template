@@ -2,6 +2,8 @@
 
 In this repository you can find an easy and fast way to set up an API using NodeJS.
 
+Heavily inspired by [this repository](https://github.com/surprograma/nodejs-api-seed).
+
 ## Technology stack
 
 The principal technologies that brings life to this app are:
