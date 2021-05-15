@@ -6,7 +6,7 @@ Heavily inspired by [this repository](https://github.com/surprograma/nodejs-api-
 
 ## Technology stack
 
-The principal technologies that brings life to this app are:
+The principal technologies that bring life to this app are:
 
 - [NodeJS](https://nodejs.org/es/).
 - [ExpressJS](https://expressjs.com/es/).
